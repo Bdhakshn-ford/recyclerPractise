@@ -1,15 +1,15 @@
-package com.trainline.interview
+package com.recyclerview.practise
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.trainline.interview.adapter.TrainLineAdapter
-import com.trainline.interview.viewModel.MainViewModel
+import com.recyclerview.practise.adapter.TrainLineAdapter
+import com.recyclerview.practise.viewModel.MainViewModel
+import com.trainline.practise.R
 
 class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel =

@@ -1,4 +1,4 @@
-package com.trainline.interview.csvReader;
+package com.recyclerview.practise.csvReader;
 
 import java.io.BufferedReader;
 import java.io.IOException;

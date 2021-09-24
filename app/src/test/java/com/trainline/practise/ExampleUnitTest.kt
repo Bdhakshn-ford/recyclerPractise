@@ -1,4 +1,4 @@
-package com.trainline.interview
+package com.trainline.practise
 
 import org.junit.Test
 

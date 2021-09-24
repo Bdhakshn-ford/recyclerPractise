@@ -1,14 +1,13 @@
-package com.trainline.interview.viewModel
+package com.recyclerview.practise.viewModel
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.trainline.interview.R
-import com.trainline.interview.csvReader.CSVFile
-import com.trainline.interview.model.RecyclerModel
+import com.recyclerview.practise.csvReader.CSVFile
+import com.recyclerview.practise.model.RecyclerModel
+import com.trainline.practise.R
 import java.io.IOException
 import java.io.InputStream
-import java.util.*
 
 class MainViewModel() : ViewModel() {
     val recyclerData = MutableLiveData<List<RecyclerModel>>()

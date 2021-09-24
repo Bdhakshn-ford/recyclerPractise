@@ -1,12 +1,12 @@
-package com.trainline.interview.adapter
+package com.recyclerview.practise.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.trainline.interview.R
-import com.trainline.interview.model.RecyclerModel
+import com.recyclerview.practise.model.RecyclerModel
+import com.trainline.practise.R
 
 class TrainLineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var arrayList: List<RecyclerModel> = ArrayList()

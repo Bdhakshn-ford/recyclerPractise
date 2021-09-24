@@ -1,4 +1,4 @@
-package com.trainline.interview.model
+package com.recyclerview.practise.model
 
 data class RecyclerModel(
     val name: String,
