@@ -30,7 +30,9 @@ class PersonAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     class PersonViewHolder constructor(private val binding: ItemRecyclerViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(personModel: Person) {
-            binding.model = personModel
+            binding.addressTextView.text = personModel.address
+            binding.nameTextView.text = personModel.name
+            binding.phoneTextView.text = personModel.phone
         }
     }
 }

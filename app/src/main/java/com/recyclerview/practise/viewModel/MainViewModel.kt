@@ -10,13 +10,13 @@ import java.io.IOException
 import java.io.InputStream
 
 class MainViewModel : ViewModel() {
-    val recyclerData = MutableLiveData<List<Person>>()
+    val personDataList = MutableLiveData<List<Person>>()
     val showError = MutableLiveData<Boolean>()
     lateinit var personDetailsRepository: PersonDetailsRepository
 
     fun readData() {
         try {
-            recyclerData.postValue(personDetailsRepository.getPersonDataList())
+            personDataList.postValue(personDetailsRepository.getPersonDataList())
         } catch (ex: IOException) {
             showError.postValue(true)
         }

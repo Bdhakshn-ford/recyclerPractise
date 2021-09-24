@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         recyclerview.layoutManager = LinearLayoutManager(this)
         recyclerview.adapter = recyclerViewAdapter
         viewModel.readData()
-        viewModel.recyclerData.observe(this, Observer {
+        viewModel.personDataList.observe(this, Observer {
             recyclerViewAdapter.arrayList = it
         })
 
