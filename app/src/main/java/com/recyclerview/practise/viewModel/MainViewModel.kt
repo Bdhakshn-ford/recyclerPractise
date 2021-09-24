@@ -1,34 +1,41 @@
 package com.recyclerview.practise.viewModel
 
-import android.content.Context
+import android.content.res.Resources
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.recyclerview.practise.csvReader.CSVFile
-import com.recyclerview.practise.model.RecyclerModel
+import com.recyclerview.practise.model.Person
 import com.recyclerview.practise.R
 import java.io.IOException
 import java.io.InputStream
 
-class MainViewModel() : ViewModel() {
-    val recyclerData = MutableLiveData<List<RecyclerModel>>()
+class MainViewModel : ViewModel() {
+    val recyclerData = MutableLiveData<List<Person>>()
     val showError = MutableLiveData<Boolean>()
+    lateinit var personDetailsRepository: PersonDetailsRepository
 
-    fun readData(context: Context) {
-        val inputStream: InputStream = context.resources.openRawResource(R.raw.testcsv)
+    fun readData() {
         try {
-            val listData = CSVFile(inputStream).read()
-            val transformedData: List<RecyclerModel> = getTransformedData(listData)
-            recyclerData.postValue(transformedData)
+            recyclerData.postValue(personDetailsRepository.getPersonDataList())
         } catch (ex: IOException) {
             showError.postValue(true)
         }
 
     }
+}
 
-    private fun getTransformedData(listData: MutableList<Any?>): List<RecyclerModel> {
+class PersonDetailsRepository(private val resources: Resources) {
+    private val inputStream: InputStream = resources.openRawResource(R.raw.testcsv)
+
+    fun getPersonDataList(): List<Person> {
+        val listData = CSVFile(inputStream).read()
+        return getTransformedData(listData)
+    }
+
+    private fun getTransformedData(listData: MutableList<Any?>): List<Person> {
         return listData.map {
             it as Array<String>
-            RecyclerModel(
+            Person(
                 name = it[0],
                 address = it[1],
                 phone = it[2]
