@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.recyclerview.practise.adapter.TrainLineAdapter
 import com.recyclerview.practise.viewModel.MainViewModel
-import com.trainline.practise.R
 
 class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel =

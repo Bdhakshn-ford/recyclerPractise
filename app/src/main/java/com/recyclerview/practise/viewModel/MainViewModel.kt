@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.recyclerview.practise.csvReader.CSVFile
 import com.recyclerview.practise.model.RecyclerModel
-import com.trainline.practise.R
+import com.recyclerview.practise.R
 import java.io.IOException
 import java.io.InputStream
 
